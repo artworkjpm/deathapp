@@ -1,0 +1,140 @@
+ANGULAR CODESCHOOL UP TO:
+
+2.6 Tabs Inside Out
+
+________________________________________
+
+DIRECTIVES - tells Angular to run some JS on this html tag. (ng-app="nameHere").
+
+ng-controller="NameofController as aliasToUseInExpressions"
+
+ng-repeat="product in store.products" - x in object.name - x can be anyname that you will use to reference later ie:
+product.description
+product.price
+product.image
+
+
+
+
+
+
+<img ng-src="{{ product.images[0].full}}"/> - to display image
+
+<div class="gallery" ng-show="product.images.length"> - show if images array has images inside it. 
+
+ng-click=" tab = 1" 
+{{tab}} - show tab value here
+ng-show=" tab === 1" - show this element when true
+ng-init="tab = 1" - to initialise the div to show on load. 
+
+ng-class="{ active: tab ===1 }" - adds the class active to element if tab ===1 is true
+
+
+ng-submit="(alias of controller already set in ng-repeat).nameoffunction(item)" - allows us to call a function when the form is submitted. 
+
+
+
+- - - -- - - -- - - - - - - - -- - - - 
+
+CUSTOM DIRECTIVES - show segments of html code, to make things easier to read. Similar to ng-includes.
+
+app.directive('nameofcustomTagTobeCamelCase', function(){
+	return{
+	restrict: 'E',
+	templateUrl: 'nameoffile.html'
+
+	}
+});
+
+this would create  html tag of <name-of-custom-tag-to-be-camel-case></name-of-custom-tag-to-be-camel-case>
+
+- - - - -- - - -- - - - - - -- - - - - - -- - - 
+IF CUSTOM DIRECTIVE ELEMENT HAS A CONTROLLER:
+
+app.directive('nameofcustomTagTobeCamelCase', function(){
+	return{
+	restrict: 'E',
+	templateUrl: 'nameoffile.html'
+	controller: function(){ add controller code here}
+	},
+	controllerAs: 'alias of controller name'
+});
+
+__________________________
+
+CONTROLLER - (data) get data on a page
+
+app.controller('NameIt', function(){});
+
+define our app's behaviour by defining functions and values. 
+
+Control data, use javascript objects
+
+_________________________
+
+MODULES - (sections)
+
+defines an application.
+container for different parts of an application
+container for application controllers
+Controllers belong to a module
+
+var app = angular.module("myApp", []);
+
+_____________________________________
+
+EXPRESSIONS - display values on the web page
+
+<h1>{{store.product.name}}</h1>
+<h2>{{store.product.price}}</h2>
+
+
+___________________________________
+
+FILTERS:
+
+{{product.price | currency }}
+{{ data | filter:opitions}}
+{{ 'date' | date: 'MM/dd/yyyy'}}
+
+ng-repeat="product in store.products | limitTo:3 | orderBy:'-price'"   - this will do descending order(most expensive first). Without the "-" it will do cheapest to most expensive. 
+
+_____________________________________
+
+SERVICES - get data from a json object.
+use $http
+ 
+$http({method: 'GET', url:'/products.json'});
+
+DEPENDENCY INJECTION:
+app.controller('SomeController', ['$http', '$log', function($http, $log){
+
+  $http.get('/products.json').success(function(data){
+	
+});
+
+}]);
+
+_______________________________________________
+
+REFERENCES:
+
+Angular docs
+egghead.io
+Thinkster.io
+kapeli.com/dash
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+<div class="row col-md-6">
+  <div class="col-md-4 col-sm-4">
+    <div class="row">
+    <label for="dob-day" class="control-label pull-left">Gender</label>
+    </div>
+      <div class="row">
+      <div class="controls">
+        <select class="form-control" name="gender" id="gender-choice">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4 col-sm-4 leftie">
+    <div class="row">
+    <label for="dob-day" class="control-label pull-left">Country of residence</label>
+    </div>
+    <div class="row">
+      <div class="controls">
+        <select class="form-control" name="country" id="country-choice">
+          <option ng-repeat="x in ages | filter:{'SEX':'Female'}" value="{{ x.COUNTRY }}">{{ x.COUNTRY }}</option>
+
+        </select>
+      </div>
+    </div>
+  </div>
+</div>

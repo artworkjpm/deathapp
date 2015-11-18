@@ -1,0 +1,29 @@
+
+USING OTHER SITE:
+
+Your Personal Day of Death is... 
+	
+Friday, April 18, 2053 
+
+___________________________
+
+
+Another said:
+
+Wednesday, 20th September 2051
+
+You will live to be 72 years, 2 months and 13 days old!
+
+____________________________
+
+taken from:
+
+http://www.who.int/en/
+
+
+____________________________________
+
+Plan:
+
+Complete angular course on codeschool
+try to create a web page that determines your death date, using angular.

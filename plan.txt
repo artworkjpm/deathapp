@@ -1,0 +1,7 @@
+Find out your death date.
+
+Date of birth:
+Country of residence:
+Gender:
+
+Calculate day of death

@@ -1,0 +1,34 @@
+body {
+  padding-top: 50px;
+}
+
+.top-nav-bar {
+  margin-bottom: 30px;
+}
+.hide-div{
+  display: none;
+  margin-top: 20px;
+}
+.spacer {
+    margin-top: 15px; /* define margin as you see fit */
+}
+
+.line {
+  border-top: 1px solid grey;
+  margin-top: 20px;
+}
+
+.bold{
+  font-weight: bold;
+}
+.leftie{
+  margin-left: 20px;
+}
+
+@media (max-width: 768px) {
+  select{margin-bottom: 10px;} 
+  .leftie{
+  margin-left: 0px;
+}
+  
+}
