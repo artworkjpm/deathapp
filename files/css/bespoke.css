@@ -25,10 +25,32 @@ body {
   margin-left: 20px;
 }
 
+.no-left{
+  padding-left: 0px;
+}
+
+
+
+
 @media (max-width: 768px) {
   select{margin-bottom: 10px;} 
   .leftie{
   margin-left: 0px;
-}
+} 
   
+  .no-left{
+  padding-left: 15px;
 }
+}
+
+select:invalid,
+select:out-of-range{
+  border-color: red;
+}
+
+
+
+
+
+
+

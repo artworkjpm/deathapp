@@ -5,7 +5,8 @@
     </div>
       <div class="row">
       <div class="controls">
-        <select class="form-control" name="gender" id="gender-choice">
+        <select class="form-control" name="gender" id="gender-choice" required>
+          <option value="" selected="selected" disabled="disabled">I am...</option>
           <option value="Male">Male</option>
           <option value="Female">Female</option>
         </select>
@@ -18,7 +19,8 @@
     </div>
     <div class="row">
       <div class="controls">
-        <select class="form-control" name="country" id="country-choice">
+        <select class="form-control" name="country" id="country-choice" required>
+          <option value="">Country</option>
           <option ng-repeat="x in ages | filter:{'SEX':'Female'}" value="{{ x.COUNTRY }}">{{ x.COUNTRY }}</option>
 
         </select>

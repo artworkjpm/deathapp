@@ -4,13 +4,13 @@
     </div>
     <div class="row">
       <div class="controls col-sm-2">
-        <select class="form-control" name="dob-day" id="dob-day">
+        <select class="form-control" name="dob-day" id="dob-day" required>
           <option value="">Day</option>
           <option value="{{$index+1}}" ng-repeat="i in dateNumber(number) track by $index">{{$index+1}}</option>
         </select>
       </div>
-      <div class="controls col-sm-2">
-        <select class="form-control" name="dob-month" id="dob-month">
+      <div class="controls col-sm-2 no-left">
+        <select class="form-control" name="dob-month" id="dob-month" required>
           <option value="">Month</option>
           <option value="01">January</option>
           <option value="02">February</option>
@@ -26,8 +26,8 @@
           <option value="12">December</option>
         </select>
       </div>
-      <div class="controls col-sm-2">
-        <select class="form-control" name="dob-year" id="dob-year">
+      <div class="controls col-sm-2 no-left">
+        <select class="form-control" name="dob-year" id="dob-year" required>
           <option value="">Year</option>
           <option value="{{$index+1920}}" ng-repeat="i in yearNumber(year) track by $index">{{$index+1920}}</option>
         </select>

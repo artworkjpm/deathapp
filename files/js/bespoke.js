@@ -97,14 +97,37 @@ app.controller('data', function ($scope, $http) {
     estimatedYears = (estimatedYears - CurrentAge);
     year = (year + estimatedYears);
     
-    //based on more-factors change days, months, years
-    
-    
-    
-    
     estimatedYears = (day +'/' + month + '/' + year);
     console.log("Date:" + estimatedYears);
+    
+    //based on more-factors change days, months, years
+    /* 
+    value = 0 nothing
+    value = 1, + one more year
+    value = 2, - one year
+    value = 3, - 2 years
+    value = 4, - 3 years
+    value = 5, - 5 years
+    value = 6, - 7 years
+    
+    value = 20, + 2 years
+    value = 30, + 3 years
+    value = 40, + 5 years
+    */
+    //get values from more-factors
+    var Overweight = $("#overweight-choice").val();
+    var Alcohol = $("#alcohol-choice").val();
+    var Smoking = $("#smoking-choice").val();
+    var Pollution = $("#pollution-choice").val();
+    var Excercise = $("#exercise-choice").val();
+    
+    console.log(Overweight);
+    
+   
 
+    
+    
+    
     
 
   }; //end of click submit
