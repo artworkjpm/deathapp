@@ -1,5 +1,4 @@
 var estimatedYears;
-
 var app = angular.module('deathApp', []);
 
 app.controller('data', function ($scope, $http) {
@@ -28,12 +27,30 @@ app.controller('data', function ($scope, $http) {
   /*TOGGLE THE DATA TABLE*/
   $(".show-table").on("click", function () {
     $(".hide-div").toggle();
-  })
+  });
 
+  ///////////////////////////////////////////////////////////////////////////////
+ //if select:invalid, disable submit button
+  $('button').addClass("disabled");
+  $.validator.setDefaults({
+    debug: true,
+    success: "valid",
+    errorPlacement: function(error, element) { }
+  });
+  var form = $( "form" );
+  form.validate();
+  $( "form" ).change(function() {
+    if(form.valid()){
+      $('button').removeClass("disabled");
+    } else {
+      $('button').addClass("disabled");
+    };
+    
+  });
+    
   //get the form data
   //CLICK ON SUBMIT
   $scope.saveData = function () {
-
     var gender = $("#gender-choice").val();
     var country = $("#country-choice").val();
 
@@ -70,7 +87,7 @@ app.controller('data', function ($scope, $http) {
     var birthDateStr = dataArray[0],
       parts = birthDateStr.match(/(\d{4})(\d{2})(\d{2})/),
       dateObj = new Date(parts[1], parts[2] - 1, parts[3]); // months 0-based!
-      var CurrentAge = getAge(dateObj)
+    var CurrentAge = getAge(dateObj)
     console.log("CURRENT AGE:" + CurrentAge);
 
     //OBTAIN THEIR DEATH AGE
@@ -96,10 +113,10 @@ app.controller('data', function ($scope, $http) {
     var year = d.getFullYear();
     estimatedYears = (estimatedYears - CurrentAge);
     year = (year + estimatedYears);
-    
-    estimatedYears = (day +'/' + month + '/' + year);
+
+    estimatedYears = (day + '/' + month + '/' + year);
     console.log("Date:" + estimatedYears);
-    
+
     //based on more-factors change days, months, years
     /* 
     value = 0 nothing
@@ -120,15 +137,15 @@ app.controller('data', function ($scope, $http) {
     var Smoking = $("#smoking-choice").val();
     var Pollution = $("#pollution-choice").val();
     var Excercise = $("#exercise-choice").val();
-    
-    console.log(Overweight);
-    
-   
 
-    
-    
-    
-    
+    console.log(Overweight);
+
+
+
+
+
+
+
 
   }; //end of click submit
 
@@ -137,5 +154,9 @@ app.controller('data', function ($scope, $http) {
 
 
 
+
+
   //end of data controller
 });
+  
+  
