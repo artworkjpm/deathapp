@@ -2,7 +2,7 @@
 
     <div class="col-xs-1 col-md-1 icons-div">
         <div class="row">
-            <i class="fa fa-calendar"></i>
+            <i class="fa fa-calendar fa-color"></i>
             
         </div>
 
@@ -36,7 +36,7 @@
         </select>
       </div>
       <div class="controls col-sm-2 no-left">
-        <select class="form-control dob-bottom" name="dob-year" id="dob-year" required>
+        <select class="form-control" name="dob-year" id="dob-year" required>
           <option value="">Year</option>
           <option value="{{$index+1920}}" ng-repeat="i in yearNumber(year) track by $index">{{$index+1920}}</option>
         </select>
