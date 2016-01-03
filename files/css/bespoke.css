@@ -12,7 +12,8 @@ body {
 }
 
 .spacer {
-    margin-top: 15px;/* define margin as you see fit */
+    margin-top: 15px;
+    /* define margin as you see fit */
 }
 
 .line {
@@ -26,18 +27,17 @@ body {
 
 .leftie {
     display: inline-block;
-    
 }
 
 .no-left {
     padding-left: 0px;
 }
 
-
-.icons-div{
+.icons-div {
     float: left;
     margin-right: 15px;
     width: 20px;
+    margin-bottom: 20px;
 }
 
 .margin-left {
@@ -45,9 +45,10 @@ body {
 }
 
 @media (max-width: 768px) {
-    .dob-bottom{
+    .dob-bottom {
         margin-bottom: 11px;
     }
+    
     .margin-left {
         margin-left: 0px;
         clear: left;
@@ -55,13 +56,14 @@ body {
     .no-left {
         padding-left: 15px;
     }
-    .no-left-complex{
-        padding-left: 0; 
+    .no-left-complex {
+        padding-left: 0;
     }
-    .margin-bottom{
+    .margin-bottom {
         margin-bottom: 15px;
     }
 }
+
 select:invalid {
     outline: none;
     box-shadow: 0 0 5px red;
@@ -76,8 +78,22 @@ select:valid {
     font-size: 3em;
 }
 
-.fa-calendar{
-    font-size:2.5em;
-    
+.fa-calendar {
+    font-size: 2.5em;
 }
 
+.hide-div .fa {
+    font-size: 1em;
+}
+
+.fa-color.red {
+    color: #FFA5A5;
+}
+
+.green {
+    color: #449d44;
+}
+
+.fa-color{
+    color: grey;
+}
