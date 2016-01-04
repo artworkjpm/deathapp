@@ -1,16 +1,25 @@
 <div class="row col-md-12 spacer">
-      
+
+    <div class="col-xs-1 col-md-1 icons-div">
+        <div class="row">
+            <i class="fa fa-calendar fa-color"></i>
+            
+        </div>
+
+    </div> 
+<div class="row col-xs-10 col-sm-10 col-md-10">
+     
     <label for="dob-day" class="control-label pull-left">Date of birth</label>
     </div>
-    <div class="row">
-      <div class="controls col-sm-2">
-        <select class="form-control" name="dob-day" id="dob-day" required>
+    <div class="row col-xs-10 no-left-complex">
+      <div class="controls col-sm-2 no-left">
+        <select class="form-control dob-bottom" name="dob-day" id="dob-day" required>
           <option value="">Day</option>
           <option value="{{$index+1}}" ng-repeat="i in dateNumber(number) track by $index">{{$index+1}}</option>
         </select>
       </div>
       <div class="controls col-sm-2 no-left">
-        <select class="form-control" name="dob-month" id="dob-month" required>
+        <select class="form-control dob-bottom" name="dob-month" id="dob-month" required>
           <option value="">Month</option>
           <option value="01">January</option>
           <option value="02">February</option>
@@ -33,3 +42,4 @@
         </select>
      </div>
     </div>
+</div>

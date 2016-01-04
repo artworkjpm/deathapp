@@ -31,8 +31,10 @@ app.controller('data', function ($scope, $http) {
 
   ///////////////////////////////////////////////////////////////////////////////
  //if select:invalid, disable submit button
-  $('button').addClass("disabled");
-  $.validator.setDefaults({
+  
+    $('button').addClass("disabled");
+    
+    $.validator.setDefaults({
     debug: true,
     success: "valid",
     errorPlacement: function(error, element) { }

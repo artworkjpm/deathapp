@@ -1,35 +1,50 @@
-<div class="row col-md-6">
-  <div class="col-md-4 col-sm-4">
-    <div class="row">
-    <div class="icon-div pull-left">
-      <i class="fa fa-user"></i>
+<div class="row col-md-8">
+    <div class="col-xs-1 col-md-1 icons-div">
+        <div class="fa-color row">
+            <i class="fa fa-user fa-color"></i>
+            
+        </div>
+
+    </div>
+    <div class="col-xs-10 col-sm-2 col-md-2">
+        <div class="row">
+            <label for="dob-day" class="control-label pull-left">Gender</label>
       </div>
       
       
       <label for="dob-day" class="control-label pull-left">Gender</label>
+        </div>
+        <div class="row">
+            <div class="controls">
+                <select class="form-control margin-bottom" name="gender" id="gender-choice" required>
+                    <option value="">I am...</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+            </div>
+        </div>
     </div>
-      <div class="row">
-      <div class="controls">
-        <select class="form-control" name="gender" id="gender-choice" required>
-          <option value="">I am...</option>
-          <option value="Male">Male</option>
-          <option value="Female">Female</option>
-        </select>
-      </div>
-    </div>
-  </div>
-  <div class="col-sm-5 leftie">
-    <div class="row">
-    <label for="dob-day" class="control-label pull-left">Country of residence</label>
-    </div>
-    <div class="row">
-      <div class="controls">
-        <select class="form-control" name="country" id="country-choice" required>
-          <option value="">Country</option>
-          <option ng-repeat="x in ages | filter:{'SEX':'Female'}" value="{{ x.COUNTRY }}">{{ x.COUNTRY }}</option>
+    <div class="col-xs-1 col-md-1 icons-div margin-left">
+        <div class="row">
+            <i class="fa fa-globe fa-color"></i>
+            
+        </div>
 
-        </select>
-      </div>
     </div>
-  </div>
+    
+    
+    <div class="col-xs-10 col-sm-4 col-md-4 leftie">
+        <div class="row">
+            <label for="dob-day" class="control-label pull-left">Country of residence</label>
+        </div>
+        <div class="row">
+            <div class="controls">
+                <select class="form-control" name="country" id="country-choice" required>
+                    <option value="">Country</option>
+                    <option ng-repeat="x in ages | filter:{'SEX':'Female'}" value="{{ x.COUNTRY }}">{{ x.COUNTRY }}</option>
+
+                </select>
+            </div>
+        </div>
+    </div>
 </div>
