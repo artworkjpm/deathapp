@@ -1,100 +1,98 @@
 body {
-    padding-top: 50px;
+  padding-top: 50px;
 }
 
 .top-nav-bar {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .hide-div {
-    display: none;
-    margin-top: 20px;
+  display: none;
+  margin-top: 20px;
 }
 
 .spacer {
-    margin-top: 15px;
-    /* define margin as you see fit */
+  margin-top: 15px;
+  /* define margin as you see fit */
 }
 
 .line {
-    border-top: 1px solid grey;
-    margin-top: 20px;
+  border-top: 1px solid grey;
+  margin-top: 20px;
 }
 
 .bold {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .leftie {
-    display: inline-block;
+  display: inline-block;
 }
 
 .no-left {
-    padding-left: 0px;
+  padding-left: 0px;
 }
 
 .icons-div {
-    float: left;
-    margin-right: 15px;
-    width: 20px;
-    margin-bottom: 20px;
+  float: left;
+  margin-right: 15px;
+  width: 20px;
+  margin-bottom: 20px;
 }
 
 .margin-left {
-    margin-left: 17px;
+  margin-left: 17px;
 }
 
 @media (max-width: 768px) {
-    .dob-bottom {
-        margin-bottom: 11px;
-    }
-    
-    .margin-left {
-        margin-left: 0px;
-        clear: left;
-    }
-    .no-left {
-        padding-left: 15px;
-    }
-    .no-left-complex {
-        padding-left: 0;
-    }
-    .margin-bottom {
-        margin-bottom: 15px;
-    }
+  .dob-bottom {
+    margin-bottom: 11px;
+  }
+  .margin-left {
+    margin-left: 0px;
+    clear: left;
+  }
+  .no-left {
+    padding-left: 15px;
+  }
+  .no-left-complex {
+    padding-left: 0;
+  }
+  .margin-bottom {
+    margin-bottom: 15px;
+  }
 }
 
 select:invalid {
-    outline: none;
-    box-shadow: 0 0 5px red;
+  outline: none;
+  box-shadow: 0 0 5px red;
 }
 
 select:valid {
-    outline: none;
-    box-shadow: 0 0 5px #449d44;
+  outline: none;
+  box-shadow: 0 0 5px #449d44;
 }
-
-.fa {
-    font-size: 3em;
-}
-
 
 .fa-calendar {
-    font-size: 2.5em;
+  font-size: 2.5em;
 }
 
 .hide-div .fa {
-    font-size: 1em;
+  font-size: 1em;
 }
 
 .red {
-    color: #FFA5A5;
+  color: #FFA5A5;
 }
 
 .green {
-    color: #449d44;
+  color: #449d44;
 }
 
-.fa-color{
-    color: grey;
+.fa-color {
+  color: grey;
+  font-size: 2.5em;
+}
+.fa-balance-scale{
+  font-size: 2em;
 }

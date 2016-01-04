@@ -143,21 +143,7 @@ app.controller('data', function ($scope, $http) {
     console.log(Overweight);
 
 
-
-
-
-
-
-
   }; //end of click submit
-
-
-
-
-
-
-
-
   //end of data controller
 });
   
