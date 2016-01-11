@@ -29,26 +29,7 @@ app.controller('data', function ($scope, $http) {
     $(".hide-div").toggle();
   });
 
-  ///////////////////////////////////////////////////////////////////////////////
- //if select:invalid, disable submit button
-  
-    $('button').addClass("disabled");
-    
-    $.validator.setDefaults({
-    debug: true,
-    success: "valid",
-    errorPlacement: function(error, element) { }
-  });
-  var form = $( "form" );
-  form.validate();
-  $( "form" ).change(function() {
-    if(form.valid()){
-      $('button').removeClass("disabled");
-    } else {
-      $('button').addClass("disabled");
-    };
-    
-  });
+ 
     
   //get the form data
   //CLICK ON SUBMIT
@@ -98,10 +79,8 @@ app.controller('data', function ($scope, $http) {
 
       if (gender === $scope.ages[i].SEX && country === $scope.ages[i].COUNTRY) {
         estimatedYears = $scope.ages[i].Value;
-
         console.log(estimatedYears)
       }
-
     }
 
     /* Minus users age from their death age, use that figure to add on to todays date = their death date.*/
@@ -115,7 +94,6 @@ app.controller('data', function ($scope, $http) {
     var year = d.getFullYear();
     estimatedYears = (estimatedYears - CurrentAge);
     year = (year + estimatedYears);
-
     estimatedYears = (day + '/' + month + '/' + year);
     console.log("Date:" + estimatedYears);
 

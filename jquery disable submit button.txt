@@ -1,0 +1,19 @@
+ ///////////////////////////////////////////////////////////////////////////////
+ //if select:invalid, disable submit button
+  
+    $('button').addClass("disabled");
+    $.validator.setDefaults({
+    debug: true,
+    success: "valid",
+    errorPlacement: function(error, element) { }
+  });
+  var form = $( "form" );
+  form.validate();
+  $( "form" ).change(function() {
+    if(form.valid()){
+      $('button').removeClass("disabled");
+    } else {
+      $('button').addClass("disabled");
+    };
+    
+  });

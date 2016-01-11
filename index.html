@@ -13,11 +13,12 @@
   <script src="files/js/angular.min.js"></script>
   <script src="files/js/bespoke.js"></script>
   <link rel="stylesheet" href="files/fonts/css/font-awesome.css" rel="stylesheet">
+  
   <!-- Bootstrap core CSS -->
   <link href="files/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom styles for this template -->
-  <link href="files/css/bespoke.css" rel="stylesheet">
- 
+  <link href="files/fonts/flaticon.css" rel="stylesheet">
+ <link href="files/css/bespoke.css" rel="stylesheet">
 </head>
 <body ng-app="deathApp" ng-controller="data">
   <div class="top-nav-bar">
@@ -33,7 +34,7 @@
     <div ng-include="'more-factors.html'"></div>
     <!--FIND OUT DATE BUTTON-->
     <div class="row col-md-12 spacer">
-       <button type="submit" ng-click="saveData()" class="btn btn-success" >Submit</button>
+       <button type="submit" ng-disabled="myForm.$invalid" ng-click="saveData()" class="btn btn-success" >Submit</button>
     </div>
       
     </form>
