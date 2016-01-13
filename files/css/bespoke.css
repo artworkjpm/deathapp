@@ -91,11 +91,19 @@ select:valid {
 }
 
 .fa-color {
-  color: grey;
+  color: #FF9595;
   font-size: 2.2em;
 }
 
 
 .form-control {
     padding: 6px 4px;
+}
+
+.error {
+  color: #FF9595;
+}
+
+.valid {
+  color: #449d44;
 }

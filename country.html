@@ -1,7 +1,7 @@
 <div class="row col-md-12 ng-scope">
     <div class="col-xs-1 col-md-1 icons-div">
         <div class="row">
-            <i class="fa fa-user fa-color"></i>
+            <i class="fa fa-user fa-color" ng-class="{ valid: isValid('gender')}"></i>
             
         </div>
 
@@ -26,13 +26,13 @@
     <div class="row col-md-12 spacer ng-scope">
       <div class="col-xs-1 col-md-1 icons-div">
         <div class="row">
-            <i class="fa fa-globe fa-color"></i>
+            <i class="fa fa-globe fa-color" ng-class="{ valid: isValid('country')}"></i>
             
         </div>
       </div>
 <div class="col-xs-8 col-sm-4 col-md-3">
         <div class="row">
-            <label for="dob-day" class="control-label pull-left">Country of residence</label>
+            <label class="control-label pull-left">Country of residence</label>
         </div>
         <div class="row">
             <div class="controls">

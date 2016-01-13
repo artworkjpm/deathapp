@@ -1,7 +1,7 @@
 <div class="row col-md-12 spacer">
   <div class="col-xs-1 col-md-1 icons-div">
     <div class="row">
-      <i class="fa fa-balance-scale fa-color"></i>
+      <i class="fa fa-balance-scale fa-color" ng-class="{ valid: isValid('overweight')}"></i>
     </div>
 
   </div>
@@ -27,7 +27,7 @@
 <div class="row col-md-12 spacer">
   <div class="col-xs-1 col-md-1 icons-div">
     <div class="row">
-      <i class="flaticon-glass16 fa-color"></i>
+      <i class="flaticon-glass16 fa-color" ng-class="{ valid: isValid('alcohol')}"></i>
 
     </div>
 
@@ -55,7 +55,7 @@
 <div class="row col-md-12 spacer">
   <div class="col-xs-1 col-md-1 icons-div">
     <div class="row">
-      <i class="flaticon-cigar fa-color"></i>
+      <i class="flaticon-cigar fa-color" ng-class="{ valid: isValid('smoking')}"></i>
 
     </div>
 
@@ -66,7 +66,7 @@
   </div>
   <div class="row col-xs-10 no-left-complex">
     <div class="controls col-sm-4 no-left">
-      <select class="form-control" name="smoking" id="smoking-choice" required>
+      <select class="form-control" name="smoking" id="smoking-choice" ng-model="smoking" required>
         <option value="">Select</option>
         <option value="1">No</option>
         <option value="2">&lt; 5 a week</option>
@@ -82,7 +82,7 @@
 <div class="row col-md-12 spacer">
   <div class="col-xs-1 col-md-1 icons-div">
     <div class="row">
-      <i class="flaticon-cars21 fa-color"></i>
+      <i class="flaticon-cars21 fa-color" ng-class="{ valid: isValid('pollution')}"></i>
 
     </div>
 
@@ -106,7 +106,7 @@
 <div class="row col-md-12 spacer">
   <div class="col-xs-1 col-md-1 icons-div">
     <div class="row">
-      <i class="flaticon-sprint fa-color"></i>
+      <i class="flaticon-sprint fa-color" ng-class="{ valid: isValid('exercise')}"></i>
 
     </div>
 
