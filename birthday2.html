@@ -12,13 +12,13 @@
     <label for="dob-day" class="control-label pull-left">Date of birth</label>
     </div>
     <div class="row col-xs-10 col-sm-8 col-md-8 no-left-complex">
-      <div class="controls col-sm-2 col-md-2 no-left">
+      <div class="controls col-sm-2 col-md-2 no-left" style="width:auto">
         <select  class="form-control dob-bottom" name="dobday" id="dob-day" ng-model="dobday" required>
           <option value="">Day</option>
           <option value="{{$index+1}}" ng-repeat="i in dateNumber(number) track by $index">{{$index+1}}</option>
         </select>
       </div>
-      <div class="controls col-sm-2 no-left">
+      <div class="controls col-sm-2 no-left" style="width:auto">
         <select class="form-control dob-bottom" name="dobmonth" id="dob-month" ng-model="dobmonth" required>
           <option value="">Month</option>
           <option value="01">January</option>
@@ -35,7 +35,7 @@
           <option value="12">December</option>
         </select>
       </div>
-      <div class="controls col-sm-2 no-left">
+      <div class="controls col-sm-2 no-left" style="width:auto">
         <select class="form-control" name="dobyear" id="dob-year" ng-model="dobyear" required>
           <option value="">Year</option>
           <option value="{{$index+1940}}" ng-repeat="i in yearNumber(year) track by $index">{{$index+1940}}</option>
