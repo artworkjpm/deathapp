@@ -33,7 +33,7 @@
             <div class="controls">
                 <select class="form-control" name="country" id="country-choice" ng-model="country" required>
                     <option value="">Country</option>
-                    <option ng-repeat="x in ages | filter:{'SEX':'Female'}" value="{{ x.COUNTRY }}">{{ x.COUNTRY }}</option>
+                    <option ng-repeat="x in ages" value="{{ x.COUNTRY }}">{{ x.COUNTRY }}</option>
                 </select>
             </div>
         </div>

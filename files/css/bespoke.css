@@ -124,3 +124,7 @@ select:valid {
 .navbar-inverse .navbar-toggle .icon-bar {
     background-color: #fff;
 }
+
+th {
+    white-space: nowrap;
+}

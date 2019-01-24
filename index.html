@@ -33,7 +33,7 @@
             <form name="myForm" role="form">
                 <div ng-include="'country.html'"></div>
                 <div ng-include="'birthday2.html'"></div>
-                <div ng-include="'more-factors.html'"></div>
+                <!-- <div ng-include="'more-factors.html'"></div> -->
                 <!--FIND OUT DATE BUTTON-->
                 <div class="row col-md-12 spacer">
                     <div class="col-xs-1 col-md-1 icons-div">&nbsp;</div>
@@ -54,20 +54,14 @@
                     </div>
                     <table class="table table-condensed table-striped table-bordered">
                         <tr>
-                            <th><a href="" ng-click="order('COUNTRY')">Country</a>
-                                <span class="fa fa-sort-alpha-asc" ng-show="predicate === 'COUNTRY'" ng-class="{'fa-sort-alpha-desc':reverse}"></span></th>
-                            <th><a href="" ng-click="order('SEX')">Sex</a>
-                                <span ng-show="predicate === 'SEX' && reverse" class="fa fa-sort-asc"></span>
-                                <span ng-show="predicate === 'SEX' && !reverse" class="fa fa-sort-desc"></span>
-                            </th>
-                            <th><a href="" ng-click="order('Value')">Age</a>
-                                <span ng-show="predicate === 'Value' && reverse" class="fa fa-sort-asc"></span>
-                                <span ng-show="predicate === 'Value' && !reverse" class="fa fa-sort-desc"></span></th>
+                            <th>Country </th>
+                            <th>Male age</th>
+                            <th>Female age</th>
                         </tr>
                         <tr ng-repeat="x in ages | orderBy:predicate:reverse | filter:searchCountry">
                             <td>{{ x.COUNTRY }}</td>
-                            <td>{{ x.SEX }}</td>
-                            <td>{{ x.Value }}</td>
+                            <td>{{ x.Male }}</td>
+                            <td>{{ x.Female }}</td>
                         </tr>
                     </table>
                 </div>
@@ -75,7 +69,7 @@
         </div>
     </div>
     <!--MAIN CONTAINER ENDS -->
-    <script src="files/js/bespoke2.js"></script>
+    <script src="files/js/bespoke.js"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="files/js/ie10-viewport-bug-workaround.js"></script>
     <script src="files/css/jAlert-v3.js"></script>
