@@ -1,5 +1,5 @@
 var estimatedYears;
-var AgeAtDeath;
+var AgeAtDeath, dead_yet;
 var app = angular.module('deathApp', []);
 app.controller('data', function ($scope, $http) {
   $http.get("angular/death/data.json").success(function (response) {
@@ -115,14 +115,18 @@ app.controller('data', function ($scope, $http) {
     console.log("Overweight: " + Overweight + ", Alchohol: " + Alcohol + ", Smoking: " + Smoking + ", Pollution: " + Pollution + ", Exercise: " + Excercise);
     console.log("Date:" + estimatedYears);
 
-    function still_alive() {
-      return null;
 
-    };
+    if (parseInt(AgeAtDeath) < parseInt(CurrentAge)) {
+      dead_yet = "you are dead!";
+    } else {
+      dead_yet = "not dead yet";
+    }
+
+
 
     $.jAlert({
       'title': 'You will die on:',
-      'content': '<h2>' + estimatedYears + ' aged:' + AgeAtDeath + '</h2><h3> Current age today: ' + CurrentAge + '</h3>',
+      'content': '<h2>' + estimatedYears + ' aged:' + AgeAtDeath + '</h2><h3> Current age today: ' + CurrentAge + '</h3>' + dead_yet,
       'theme': 'black',
       'size': 'lg',
       'showAnimation': 'fadeInUp',
