@@ -29,18 +29,18 @@ app.controller('data', function ($scope, $http) {
   $(".show-table").on("click", function () {
     $(".hide-div").toggle();
   });
-    
+
   //change color of icon
-  $scope.isInvalid = function(field){
+  $scope.isInvalid = function (field) {
     return $scope.myForm[field].$invalid && $scope.myForm[field].$dirty;
   };
 
-  $scope.isValid = function(field){
+  $scope.isValid = function (field) {
     return $scope.myForm[field].$valid && $scope.myForm[field].$dirty;
   };
 
- 
- //get the form data
+
+  //get the form data
   //CLICK ON SUBMIT
   $scope.saveData = function () {
     var gender = $("#gender-choice").val();
@@ -89,7 +89,7 @@ app.controller('data', function ($scope, $http) {
       if (gender === $scope.ages[i].SEX && country === $scope.ages[i].COUNTRY) {
         estimatedYears = $scope.ages[i].Value;
         AgeAtDeath = estimatedYears;
-        console.log(estimatedYears)
+        console.log("estimatedYears: " + estimatedYears)
       }
     }
 
@@ -105,7 +105,7 @@ app.controller('data', function ($scope, $http) {
     estimatedYears = (estimatedYears - CurrentAge);
     year = (year + estimatedYears);
     estimatedYears = (day + '/' + month + '/' + year);
-    
+
 
     //based on more-factors change days, months, years
     /* 
@@ -128,31 +128,30 @@ app.controller('data', function ($scope, $http) {
     var Pollution = $("#pollution-choice").val();
     var Excercise = $("#exercise-choice").val();
 
-    console.log(Overweight);
+    console.log("Overweight: " + Overweight + ", Alchohol: " + Alcohol + ", Smoking: " + Smoking + ", Pollution: " + Pollution + ", Exercise: " + Excercise);
     console.log("Date:" + estimatedYears);
-    
-    
+
+
     $(document).ready(function () {
-    $.jAlert({
-      'title': 'You will die on:',
-      'content': '<h2>' + estimatedYears + '</h2>'
-      + '<h3>Aged:' + AgeAtDeath + '</h3>' ,
-      'theme': 'black',
-      'size': 'lg',
-      'showAnimation': 'fadeInUp',
-      'hideAnimation': 'fadeOutDown'
-  });
-});
-    
+      $.jAlert({
+        'title': 'You will die on:',
+        'content': '<h2>' + estimatedYears + '</h2>'
+          + '<h3>Aged:' + AgeAtDeath + '</h3>',
+        'theme': 'black',
+        'size': 'lg',
+        'showAnimation': 'fadeInUp',
+        'hideAnimation': 'fadeOutDown'
+      });
+    });
+
 
   }; //end of click submit
   //end of data controller
-  
-  
+
+
 });
 
-  
 
 
-  
-  
+
+

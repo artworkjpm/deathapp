@@ -2,9 +2,7 @@
     <div class="col-xs-1 col-md-1 icons-div">
         <div class="row">
             <i class="fa fa-user fa-color" ng-class="{ valid: isValid('gender')}"></i>
-            
         </div>
-
     </div>
     <div class="col-xs-8 col-sm-2 col-md-2">
         <div class="row">
@@ -20,17 +18,14 @@
             </div>
         </div>
     </div>
-  </div>
-
-
-    <div class="row col-md-12 spacer ng-scope">
-      <div class="col-xs-1 col-md-1 icons-div">
+</div>
+<div class="row col-md-12 spacer ng-scope">
+    <div class="col-xs-1 col-md-1 icons-div">
         <div class="row">
             <i class="fa fa-globe fa-color" ng-class="{ valid: isValid('country')}"></i>
-            
         </div>
-      </div>
-<div class="col-xs-8 col-sm-4 col-md-3">
+    </div>
+    <div class="col-xs-8 col-sm-4 col-md-3">
         <div class="row">
             <label class="control-label pull-left">Country of residence</label>
         </div>
@@ -39,7 +34,6 @@
                 <select class="form-control" name="country" id="country-choice" ng-model="country" required>
                     <option value="">Country</option>
                     <option ng-repeat="x in ages | filter:{'SEX':'Female'}" value="{{ x.COUNTRY }}">{{ x.COUNTRY }}</option>
-
                 </select>
             </div>
         </div>
