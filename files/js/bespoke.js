@@ -30,13 +30,15 @@ app.controller('data', function ($scope, $http) {
   };
   $scope.isValid = function (field) {
     return $scope.myForm[field].$valid && $scope.myForm[field].$dirty;
+
+
   };
   //get the form data
   //CLICK ON SUBMIT
   $scope.saveData = function () {
     var gender = $("#gender-choice").val();
     var country = $("#country-choice").val();
-    console.log("gender: " + gender);
+    //console.log("gender: " + gender);
     //DOB
     var day = $("#dob-day").val();
     day = ("0" + day).slice(-2);
@@ -117,9 +119,9 @@ app.controller('data', function ($scope, $http) {
 
 
     if (parseInt(AgeAtDeath) < parseInt(CurrentAge)) {
-      dead_yet = "you are dead!";
+      dead_yet = "Hang on, you supposed to be dead! :D";
     } else {
-      dead_yet = "not dead yet";
+      dead_yet = "You only have x days left to live, hows your bucket list looking?";
     }
 
 
