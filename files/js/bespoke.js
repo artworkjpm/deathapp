@@ -98,12 +98,23 @@ app.controller('data', function ($scope, $http) {
     //based on more-factors change days, months, yearsvalue = + or - is for the amount of //years added to the year of death
 
     //get values from more-factors
-    var Overweight = $("#overweight-choice").val();
-    var Alcohol = $("#alcohol-choice").val();
-    var Smoking = $("#smoking-choice").val();
-    var Pollution = $("#pollution-choice").val();
-    var Excercise = $("#exercise-choice").val();
+    /*     var Overweight = $("#overweight-choice").val();
+        var Alcohol = $("#alcohol-choice").val();
+        var Smoking = $("#smoking-choice").val();
+        var Pollution = $("#pollution-choice").val();
+        var Excercise = $("#exercise-choice").val(); */
+
+    var Overweight = "-2";
+    var Alcohol = "-2";
+    var Smoking = "-2";
+    var Pollution = "-2";
+    var Excercise = "+2";
     console.log("Overweight: " + Overweight + ", Alchohol: " + Alcohol + ", Smoking: " + Smoking + ", Pollution: " + Pollution + ", Exercise: " + Excercise);
+    var factors_arr = [];
+    factors_arr.push(Overweight, Alcohol, Smoking, Pollution, Excercise)
+
+    console.log("factors_arr: " + factors_arr);
+    //if (Overweight:contains("-")AlcoholSmoking Pollution,Excercise)
 
 
 
@@ -127,7 +138,7 @@ app.controller('data', function ($scope, $http) {
     if (parseInt(AgeAtDeath) < parseInt(CurrentAge)) {
       dead_yet = "Hang on, your supposed to be dead! 😲";
     } else {
-      dead_yet = "You only have " + diffDays + " days left to live, hows your bucket list looking?";
+      dead_yet = "You have <strong>" + diffDays + "</strong> days left to live, hows your bucket list looking?";
     }
     $.jAlert({
       'title': 'You will die on:',
