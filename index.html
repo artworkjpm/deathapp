@@ -33,11 +33,12 @@
             <form name="myForm" role="form" autocomplete="on">
                 <div ng-include="'country.html'"></div>
                 <div ng-include="'birthday2.html'"></div>
-                <!-- <div ng-include="'more-factors.html'"></div> -->
+                <div ng-include="'more-factors.html'"></div>
                 <!--FIND OUT DATE BUTTON-->
                 <div class="row col-md-12 spacer">
                     <div class="col-xs-1 col-md-1 icons-div">&nbsp;</div>
-                    <div class="row col-xs-10"><button type="submit" ng-disabled="myForm.$invalid" ng-click="saveData()" class="btn btn-success">Submit</button></div>
+                    <div class="row col-xs-10"><button type="submit" ng-click="saveData()" class="btn btn-success">Submit</button></div>
+                    <!-- ng-disabled="myForm.$invalid" into button attribute -->
                 </div>
             </form>
         </div>
@@ -74,7 +75,18 @@
     <script src="files/js/ie10-viewport-bug-workaround.js"></script>
     <script src="files/css/jAlert-v3.js"></script>
     <script src="files/css/jAlert-functions.js">
-        //optional!!
+        //optional!
+    </script>
+    <script>
+        $(document).ready(function() {
+            setTimeout(function() {
+                //do this after view has loaded :)
+                //force values for quicker testing
+                $("#gender-choice option[value='Male']").attr('selected', true);
+                $("#country-choice option[value='Albania']").attr('selected', true);
+                $("#dob-day option[value='2'], #dob-month option[value='02'], #dob-year option[value='1950'] ").attr('selected', true);
+            }, 1000);
+        });
     </script>
 </body>
 

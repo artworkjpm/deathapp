@@ -30,8 +30,6 @@ app.controller('data', function ($scope, $http) {
   };
   $scope.isValid = function (field) {
     return $scope.myForm[field].$valid && $scope.myForm[field].$dirty;
-
-
   };
   //get the form data
   //CLICK ON SUBMIT
@@ -86,28 +84,19 @@ app.controller('data', function ($scope, $http) {
     /* Minus users age from their death age, use that figure to add on to todays date = their death date.*/
     //get date:
     var d = new Date();
-    var month = d.getMonth() + 1;
-    month = (('' + month).length < 2 ? '0' : '') + month;
-    var day = d.getDate();
+    var day = parseInt(Math.random() * (30 - 1) + 1);
+    console.log("day: " + day);
     day = (('' + day).length < 2 ? '0' : '') + day;
+    var month = parseInt(Math.random() * (12 - 1) + 1);
+    console.log("month: " + month);
+    month = (('' + month).length < 2 ? '0' : '') + month;
     var year = d.getFullYear();
     estimatedYears = (estimatedYears - CurrentAge);
     year = (year + estimatedYears);
     estimatedYears = (day + '/' + month + '/' + year);
-    //based on more-factors change days, months, years
-    /* 
-    value = 0 nothing
-    value = 1, + one more year
-    value = 2, - one year
-    value = 3, - 2 years
-    value = 4, - 3 years
-    value = 5, - 5 years
-    value = 6, - 7 years
- 
-    value = 20, + 2 years
-    value = 30, + 3 years
-    value = 40, + 5 years
-    */
+    var calc_days = (year + '/' + 'month' + 'day');
+    //based on more-factors change days, months, yearsvalue = + or - is for the amount of //years added to the year of death
+
     //get values from more-factors
     var Overweight = $("#overweight-choice").val();
     var Alcohol = $("#alcohol-choice").val();
@@ -115,20 +104,34 @@ app.controller('data', function ($scope, $http) {
     var Pollution = $("#pollution-choice").val();
     var Excercise = $("#exercise-choice").val();
     console.log("Overweight: " + Overweight + ", Alchohol: " + Alcohol + ", Smoking: " + Smoking + ", Pollution: " + Pollution + ", Exercise: " + Excercise);
-    console.log("Date:" + estimatedYears);
 
 
+
+
+
+
+
+
+    // console.log("Date:" + estimatedYears);
+    //x days left
+    var xdays = parseInt(AgeAtDeath) - parseInt(CurrentAge);
+    xdays = xdays * 365;
+    //console.log("xdays: " + xdays);
+    //year = parseInt(year);
+    //console.log("year: " + year);
+    var oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
+    var firstDate = new Date(year, month - 1, day);
+    var secondDate = new Date();
+    var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime()) / (oneDay)));
+    //console.log("oneDay: " + oneDay + ' , firstDate:' + firstDate + ', secondDate:' + secondDate + ', diffDays:' + diffDays);
     if (parseInt(AgeAtDeath) < parseInt(CurrentAge)) {
-      dead_yet = "Hang on, you supposed to be dead! :D";
+      dead_yet = "Hang on, your supposed to be dead! 😲";
     } else {
-      dead_yet = "You only have x days left to live, hows your bucket list looking?";
+      dead_yet = "You only have " + diffDays + " days left to live, hows your bucket list looking?";
     }
-
-
-
     $.jAlert({
       'title': 'You will die on:',
-      'content': '<h2>' + estimatedYears + ' aged:' + AgeAtDeath + '</h2><h3> Current age today: ' + CurrentAge + '</h3>' + dead_yet,
+      'content': '<h2>' + estimatedYears + ' aged ' + AgeAtDeath + '</h2><h3> Current age: ' + CurrentAge + '</h3>' + dead_yet,
       'theme': 'black',
       'size': 'lg',
       'showAnimation': 'fadeInUp',
