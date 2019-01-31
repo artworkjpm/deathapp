@@ -134,7 +134,7 @@ app.controller('data', function ($scope, $http) {
     var firstDate = new Date(year, month - 1, day);
     var secondDate = new Date();
     var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime()) / (oneDay)));
-    //console.log("oneDay: " + oneDay + ' , firstDate:' + firstDate + ', secondDate:' + secondDate + ', diffDays:' + diffDays);
+    console.log("oneDay: " + oneDay + ' , firstDate:' + firstDate + ', secondDate:' + secondDate + ', diffDays:' + diffDays);
     if (parseInt(AgeAtDeath) < parseInt(CurrentAge)) {
       dead_yet = "Hang on, your supposed to be dead! 😲";
     } else {
