@@ -128,3 +128,10 @@ select:valid {
 th {
     white-space: nowrap;
 }
+
+.red{
+    color: red;
+}
+.green{
+    color: green;
+}

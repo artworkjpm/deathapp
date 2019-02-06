@@ -81,6 +81,31 @@ app.controller('data', function($scope, $http) {
             AgeAtDeath = estimatedYears;
             console.log("estimatedYears: " + estimatedYears)
         }
+
+        /* based on more-factors change days, months, yearsvalue = + or - is for the amount of years added to the year of death */
+        //get values from more-factors
+       /*  var Overweight = $("#overweight-choice").val();
+        var Alcohol = $("#alcohol-choice").val();
+        var Smoking = $("#smoking-choice").val();
+        var Pollution = $("#pollution-choice").val();
+        var Exercise = $("#exercise-choice").val(); */
+        var Overweight = "-2";
+        var Alcohol = "-2";
+        var Smoking = "-2";
+        var Pollution = "-2";
+        var Exercise = "+2";
+        console.log("Overweight: " + Overweight + ", Alchohol: " + Alcohol + ", Smoking: " + Smoking + ", Pollution: " + Pollution + ", Exercise: " + Exercise);
+        var factors_arr = [];
+        factors_arr.push(Overweight, Alcohol, Smoking, Pollution, Exercise);
+        console.log("factors_arr1: " + factors_arr);
+        factors_arr = factors_arr.map(Number);
+        console.log("factors_arr1.2: " + factors_arr);
+        function getSum(total, num) {
+            return total + num;
+        }
+        factors_arr = factors_arr.reduce(getSum);
+        console.log("factors_arr2: " + factors_arr);
+
         /* Minus users age from their death age, use that figure to add on to todays date = their death date.*/
         //get date:
         var d = new Date();
@@ -91,35 +116,30 @@ app.controller('data', function($scope, $http) {
         console.log("month: " + month);
         month = (('' + month).length < 2 ? '0' : '') + month;
         var year = d.getFullYear();
-        estimatedYears = (estimatedYears - CurrentAge);
+        estimatedYears = (estimatedYears - CurrentAge)
+        console.log("estimatedYears before factors: " + estimatedYears);
+        /* estimatedYears = (estimatedYears - factors_arr);
+        console.log("estimatedYears AFTER factors: " + estimatedYears); */
         year = (year + estimatedYears);
+        reduce_years_arr = [];
+        reduce_years_arr.push(year, factors_arr);
+        console.log("reduce_years_array: " + reduce_years_arr);
+
+        reduce_years_arr = reduce_years_arr.reduce(getSum);
+        console.log("reduce_years_array2: " + reduce_years_arr);
+        year = reduce_years_arr;
+
+        //now reduce the factors from the aged
+        reduce_age = [];
+        reduce_age.push(AgeAtDeath, factors_arr);
+        reduce_age = reduce_age.map(Number);
+        console.log("reduce_age: " + reduce_age);
+        reduce_age = reduce_age.reduce(getSum);
+        console.log("reduce_age: " + reduce_age);
+        AgeAtDeath = reduce_age;
+
         estimatedYears = (day + '/' + month + '/' + year);
         var calc_days = (year + '/' + 'month' + 'day');
-        /* based on more-factors change days, months, yearsvalue = + or - is for the amount of years added to the year of death */
-        //get values from more-factors
-        var Overweight = $("#overweight-choice").val();
-        var Alcohol = $("#alcohol-choice").val();
-        var Smoking = $("#smoking-choice").val();
-        var Pollution = $("#pollution-choice").val();
-        var Excercise = $("#exercise-choice").val();
-        /* var Overweight = "-2";
-        var Alcohol = "-2";
-        var Smoking = "-2";
-        var Pollution = "-2";
-        var Excercise = "+2"; */
-        console.log("Overweight: " + Overweight + ", Alchohol: " + Alcohol + ", Smoking: " + Smoking + ", Pollution: " + Pollution + ", Exercise: " + Excercise);
-        var factors_arr = [];
-        factors_arr.push(Overweight, Alcohol, Smoking, Pollution, Excercise);
-        console.log("factors_arr1: " + factors_arr);
-        factors_arr = factors_arr.map(Number);
-        console.log("factors_arr1.2: " + factors_arr);
-        function getSum(total, num) {
-            return total + num;
-        }
-        factors_arr = factors_arr.reduce(getSum);
-        console.log("factors_arr2: " + factors_arr);
-
-
 
         // console.log("Date:" + estimatedYears);
         //x days left
@@ -135,13 +155,26 @@ app.controller('data', function($scope, $http) {
         console.log("oneDay: " + oneDay + ' , firstDate:' + firstDate + ', secondDate:' + secondDate + ', diffDays:' + diffDays);
         //message if predicted date has passed already!
         if (parseInt(AgeAtDeath) < parseInt(CurrentAge)) {
-            dead_yet = "Hang on, your supposed to be dead! 😲";
+            dead_yet = "<h4>Hang on, your supposed to be dead! 😲</h4>";
         } else {
-            dead_yet = "You have <strong>" + diffDays + "</strong> days left to live, hows your bucket list looking?";
+            dead_yet = "<h4>You have <strong>" + diffDays + "</strong> days left to live, hows your bucket list looking?</h4>";
         }
+
+
+        factors_table = "Overweight: " + Overweight + " years<br> Alcohol: " + Alcohol + " years<br> Smoking: " + Smoking + " years<br> Pollution: " + Pollution + " years<br> Exercise: " + Exercise + " years";
+
+        //factors message
+        if (factors_arr < 0) {
+          factors_message = "<p class='red'><span class='glyphicon glyphicon-minus red'></span> Unfortunately due to the way have lived, you have lost " + factors_arr + " years of your life:<br>" + factors_table + "</p>";
+        } else {
+          factors_message = "<br><span class='glyphicon glyphicon-plus green'></span> Congratulations, due to the way have lived, you have gained " + factors_arr + "years!:";
+        }
+
+
+
         $.jAlert({
             'title': 'You will die on:',
-            'content': '<h2>' + estimatedYears + ' aged ' + AgeAtDeath + '</h2><h3> Current age: ' + CurrentAge + '</h3>' + dead_yet,
+            'content': '<h2>' + estimatedYears + ' aged ' + AgeAtDeath + '</h2><h3> Current age: ' + CurrentAge + '</h3>' + dead_yet + factors_message,
             'theme': 'black',
             'size': 'lg',
             'showAnimation': 'fadeInUp',
