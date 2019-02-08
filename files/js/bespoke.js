@@ -10,6 +10,10 @@ app.controller('data', function($scope, $http) {
             $scope.reverse = ($scope.predicate === predicate) ? !$scope.reverse : false;
             $scope.predicate = predicate;
         };
+
+        $scope.hide_nav = function() {
+            $("nav").toggle();
+        };
     });
     /*Repeating numbers for date of birth*/
     $scope.number = 31;

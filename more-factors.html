@@ -5,7 +5,7 @@
         </div>
     </div>
     <div class="row col-xs-10 col-sm-10 col-md-10">
-        <label for="overweight" class="control-label pull-left">Are you overweight?</label>
+        <label for="overweight" class="control-label pull-left" ng-class="{ valid: isValid('overweight')}">Are you overweight?</label>
     </div>
     <div class="row col-xs-10 no-left-complex">
         <div class="controls col-sm-4 no-left">
@@ -27,7 +27,7 @@
         </div>
     </div>
     <div class="row col-xs-10 col-sm-10 col-md-10">
-        <label for="alcohol" class="control-label pull-left">How many alcoholic drinks do you consume?</label>
+        <label for="alcohol" class="control-label pull-left" ng-class="{ valid: isValid('alcohol')}">How many alcoholic drinks do you consume?</label>
     </div>
     <div class="row col-xs-10 no-left-complex">
         <div class="controls col-sm-4 no-left">
@@ -51,7 +51,7 @@
         </div>
     </div>
     <div class="row col-xs-10 col-sm-10 col-md-10">
-        <label for="smoking" class="control-label pull-left">Do you smoke?</label>
+        <label for="smoking" class="control-label pull-left" ng-class="{ valid: isValid('smoking')}">Do you smoke?</label>
     </div>
     <div class="row col-xs-10 no-left-complex">
         <div class="controls col-sm-4 no-left">
@@ -74,7 +74,7 @@
         </div>
     </div>
     <div class="row col-xs-10 col-sm-10 col-md-10">
-        <label for="pollution" class="control-label pull-left">Do you live in an area with a lot of air pollution?</label>
+        <label for="pollution" class="control-label pull-left" ng-class="{ valid: isValid('pollution')}">Do you live in an area with a lot of air pollution?</label>
     </div>
     <div class="row col-xs-10 no-left-complex">
         <div class="controls col-sm-4 no-left">
@@ -95,7 +95,7 @@
         </div>
     </div>
     <div class="row col-xs-10 col-sm-10 col-md-10">
-        <label for="exercise" class="control-label pull-left">Do you exercise?</label>
+        <label for="exercise" class="control-label pull-left" ng-class="{ valid: isValid('exercise')}">Do you exercise?</label>
     </div>
     <div class="row col-xs-10 no-left-complex">
         <div class="controls col-sm-4 no-left">

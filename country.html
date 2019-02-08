@@ -6,7 +6,7 @@
     </div>
     <div class="col-xs-8 col-sm-2 col-md-2">
         <div class="row">
-            <label for="dob-day" class="control-label pull-left">Gender</label>
+            <label for="dob-day" class="control-label pull-left" ng-class="{ valid: isValid('gender')}">Gender</label>
         </div>
         <div class="row">
             <div class="controls">
@@ -27,7 +27,7 @@
     </div>
     <div class="col-xs-8 col-sm-4 col-md-3">
         <div class="row">
-            <label class="control-label pull-left">Country of residence</label>
+            <label class="control-label pull-left" ng-class="{ valid: isValid('country')}">Country of residence</label>
         </div>
         <div class="row">
             <div class="controls">

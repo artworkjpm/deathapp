@@ -5,7 +5,7 @@
         </div>
     </div>
     <div class="row col-xs-10 col-sm-10 col-md-10">
-        <label for="dob-day" class="control-label pull-left">Date of birth</label>
+        <label for="dob-day" class="control-label pull-left" ng-class="{ valid: isValid('dobday' && 'dobmonth' && 'dobyear')}">Date of birth</label>
     </div>
     <div class="row col-xs-10 col-sm-8 col-md-8 no-left-complex">
         <div class="controls col-sm-2 col-md-2 no-left" style="width:auto">
