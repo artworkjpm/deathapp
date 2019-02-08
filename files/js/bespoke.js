@@ -82,18 +82,17 @@ app.controller('data', function($scope, $http) {
             console.log("estimatedYears: " + estimatedYears)
         }
 
+
+        //testing code now in testing-code.js
+
         /* based on more-factors change days, months, yearsvalue = + or - is for the amount of years added to the year of death */
         //get values from more-factors
-       /*  var Overweight = $("#overweight-choice").val();
+        var Overweight = $("#overweight-choice").val();
         var Alcohol = $("#alcohol-choice").val();
         var Smoking = $("#smoking-choice").val();
         var Pollution = $("#pollution-choice").val();
-        var Exercise = $("#exercise-choice").val(); */
-        var Overweight = "-2";
-        var Alcohol = "-2";
-        var Smoking = "-2";
-        var Pollution = "-2";
-        var Exercise = "+2";
+        var Exercise = $("#exercise-choice").val();
+
         console.log("Overweight: " + Overweight + ", Alchohol: " + Alcohol + ", Smoking: " + Smoking + ", Pollution: " + Pollution + ", Exercise: " + Exercise);
         var factors_arr = [];
         factors_arr.push(Overweight, Alcohol, Smoking, Pollution, Exercise);
@@ -165,9 +164,9 @@ app.controller('data', function($scope, $http) {
 
         //factors message
         if (factors_arr < 0) {
-          factors_message = "<p class='red'><span class='glyphicon glyphicon-minus red'></span> Unfortunately due to the way have lived, you have lost " + factors_arr + " years of your life:<br>" + factors_table + "</p>";
+          factors_message = "<span class='glyphicon glyphicon-minus red'></span> Unfortunately due to your life conditions you have lost " + factors_arr + " years of your life:<br>" + factors_table;
         } else {
-          factors_message = "<br><span class='glyphicon glyphicon-plus green'></span> Congratulations, due to the way have lived, you have gained " + factors_arr + "years!:";
+          factors_message = "<span class='glyphicon glyphicon-plus green'></span> Congratulations, due to the way have lived you have gained " + factors_arr + " years:<br>" + factors_table;
         }
 
 

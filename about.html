@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title>Death App</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="files/js/bootstrap.min.js"></script>
+    <script src="files/js/angular.min.js"></script>
+    <script src="files/js/bespoke.js"></script>
+    <link rel="stylesheet" href="files/fonts/css/font-awesome.css" rel="stylesheet">
+    <!-- Bootstrap core CSS -->
+    <link href="files/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="files/fonts/flaticon.css" rel="stylesheet">
+    <link href="files/css/bespoke.css" rel="stylesheet">
+</head>
+
+<body ng-app="deathApp" ng-controller="data">
+    <div class="top-nav-bar">
+        <div ng-include="'nav.html'"></div>
+    </div>
+    <!--IT STARTS HERE-->
+    <div class="container">
+        <div class="top-title">
+            <div class="row col-md-12">
+                <h4>Tools used to build this app:</h4>
+                <ul class="arrow">
+                    <li><span class="green-big">> Angular</span>&nbsp;&nbsp;- <strong>ng-include</strong> to separate html, <strong>ng-model="searchCountry"</strong> for the country list, <strong>ng-class="{ valid: isValid('gender')}"</strong> , for form validation, <strong>AND much more...</strong>
+                    </li>
+                    <li><span class="green-big">> Bootstrap</span>&nbsp;&nbsp;to offer a quick style and grid solution for mobiles </li>
+                    <li><span class="green-big">> JavaScript</span>&nbsp;&nbsp;oh thankyou sweet javascript, I'm doing quite a bit of math here and the <strong>reduce()</strong> and to use this I must create <strong>Arrays</strong> of course, example:
+
+                        <code><br>
+                                var factors_arr = [];<br>
+                                factors_arr.push(Overweight, Alcohol, Smoking, Pollution, Exercise);<br>
+                                console.log("factors_arr1: " + factors_arr);<br>
+                                factors_arr = factors_arr.map(Number);<br>
+                                console.log("factors_arr1.2: " + factors_arr);<br>
+                                function getSum(total, num) {<br>
+                                    return total + num;<br>
+                                }<br>
+                                factors_arr = factors_arr.reduce(getSum);<br>
+                                console.log("factors_arr2: " + factors_arr);</code><br>
+                    </li>
+                </ul>
+                </details>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
