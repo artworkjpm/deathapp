@@ -3,8 +3,31 @@ body {
     background-color: #000;
 }
 
+body {
+    position: relative;
+    z-index: 1;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .4;
+    z-index: -1;
+    background-image: url("../images/death_PNG58.png");
+    background-repeat: no-repeat;
+    background-position-x: 70%;
+}
+
 nav {
     display: none;
+}
+
+.navbar-collapse {
+    padding-left: 35px;
 }
 
 a.nav_link {
@@ -89,36 +112,20 @@ a.nav_link {
     }
 }
 
-@media (min-width: 768px) {
-    body {
-        position: relative;
-        z-index: 1;
-    }
-
-    body::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: .4;
-        z-index: -1;
-        background-image: url("../images/death_PNG58.png");
-        background-repeat: no-repeat;
-        background-position-x: calc(100% / 1.1);
-    }
-}
-
-select:invalid {
+.form-control.ng-valid:focus, select:valid {
+    border-color: unset;
     outline: none;
-    box-shadow: 0 0 5px red;
+    box-shadow: 0 0 0px 2px #5cb85c;
+    border: unset;
 }
 
-select:valid {
+.form-control.ng-invalid:focus, select:invalid {
+    border-color: unset;
     outline: none;
-    box-shadow: 0 0 5px #449d44;
+    box-shadow: 0 0 0px 2px #FFA5A5;
+    border: unset;
 }
+
 
 .fa-calendar {
     font-size: 2.5em;
@@ -133,7 +140,7 @@ select:valid {
 }
 
 .green {
-    color: #449d44;
+    color: #5cb85c
 }
 
 .fa-color {
@@ -150,7 +157,7 @@ select:valid {
 }
 
 .valid {
-    color: #449d44;
+    color: #5cb85c
 }
 
 @media screen and (max-width: 480px) {
