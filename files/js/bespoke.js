@@ -25,7 +25,12 @@ app.controller('data', function($scope, $http) {
         return new Array(num);
     };
     /*TOGGLE THE DATA TABLE*/
-    $(".show-table").on("click", function() {
+    $(".show-table").click(function() {
+        var offset = $(this).offset();
+        offset.top -= 20;
+        $('html, body').animate({
+            scrollTop: offset.top,
+        });
         $(".hide-div").toggle();
     });
     //change color of icon

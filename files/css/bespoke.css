@@ -1,4 +1,8 @@
+html {
+    height: 100%;
+  }
 body {
+    min-height: 100%;
     color: #dddddd;
     background-color: #000;
 }
@@ -22,7 +26,7 @@ body::after {
     background-position-x: 70%;
 }
 
-nav {
+.home-nav nav {
     display: none;
 }
 
@@ -115,14 +119,14 @@ a.nav_link {
 .form-control.ng-valid:focus, select:valid {
     border-color: unset;
     outline: none;
-    box-shadow: 0 0 0px 2px #5cb85c;
+    box-shadow: 0 0 15px 3px #5cb85c;
     border: unset;
 }
 
 .form-control.ng-invalid:focus, select:invalid {
     border-color: unset;
     outline: none;
-    box-shadow: 0 0 0px 2px #FFA5A5;
+    box-shadow: 0 0 15px 3px #FFA5A5;
     border: unset;
 }
 
